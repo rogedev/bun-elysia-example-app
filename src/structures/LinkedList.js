@@ -2,7 +2,7 @@ import { Node } from "./Node"
 
 export class LinkedList {
   constructor(head = null) {
-    this.head = head
+    this.head = new Node(head)
   }
   append(val) {
     let value = new Node(val)
@@ -17,8 +17,10 @@ export class LinkedList {
     node.next = value
   }
   static fromArray(arr) {
-    const myList = new LinkedList()
-    for (const val of arr) myList.append(val)
+    const myList = new LinkedList(arr[0])
+    for (let i = 1; i < arr.length; i++) {
+      myList.append(arr[i])
+    }
     return myList
   }
 }
