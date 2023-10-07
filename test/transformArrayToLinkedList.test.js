@@ -3,7 +3,9 @@ import { transformArrayToLinkedList } from "../src/services/transformArrayToLink
 import { LinkedList } from "../src/structures/LinkedList";
 
 test('transformArrayToLinkedList test', () => {
-    const given = [1]
-    const expected =  new LinkedList(1)
-    expect(transformArrayToLinkedList(given)).toEqual(expected)
+    expect(transformArrayToLinkedList([1])).toEqual(new LinkedList(1))
+})
+
+test('transformArrayToLinkedList when invalid array test', () => {
+    expect(transformArrayToLinkedList(null)).toEqual({ errorMessage: "Invalid javascript Array" })
 })
