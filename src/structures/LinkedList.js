@@ -1,5 +1,3 @@
-import { Node } from "./Node"
-
 export class LinkedList {
   constructor(head = null) {
     this.head = new Node(head)
@@ -22,5 +20,12 @@ export class LinkedList {
       myList.append(arr[i])
     }
     return myList
+  }
+}
+
+export class Node {
+  constructor(data) {
+    this.data = data
+    this.next = null
   }
 }
